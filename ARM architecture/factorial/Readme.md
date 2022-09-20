@@ -1,6 +1,6 @@
 Just to bring a comparison between C language code , Assembly code , and Arm instructions set   
 
-1) Initializing `fact` function / label:   
+1) Initializing `FACT` function / label:   
 
    C code :   
    ```c
@@ -21,7 +21,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
         STR LR , [SP , #8]
         STR X0 , [SP , #0]
    ```
-2) Declare Base case for recursion    
+2) Declare Base Case for Recursion    
     
    C code:
    ```c
@@ -51,6 +51,54 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
 
       BR LR
    ```
-4)
+3) Recursive formula
 
+   C language:   
+   ```c
+   return n*FACT(n-1);
+   ```
+   
+   Assembly Code:   
+   ```asm
+   .L2:
+	movl	16(%rbp), %eax
+	subl	$1, %eax
+	movl	%eax, %ecx
+	call	fact
+	imull	16(%rbp), %eax
+   ```
 
+   ARM Instructions:
+   ```asm
+   	SUBIS XZR , X0 , #1
+	B GE L1
+   ```
+   ```asm
+   L1:
+	SUBI X0 , X0 , #1
+	BL FACT
+	
+	LDR XO , [SP , #0]
+	LDR LR , [SP , #8]
+	ADDI SP , SP , #16
+	MUL X1 , X0 , X1
+	
+	BR LR
+   ```
+4) End of program
+    C langugage :
+    ```c
+    	}
+    ```
+    Assembly Language :
+    ```asm
+    ret
+	.seh_endproc
+	.ident	"GCC: (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+    ```
+    
+    ARM Instructions:
+    for return statement
+    ```asm
+    BR LR
+    ```
