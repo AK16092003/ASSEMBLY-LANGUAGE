@@ -109,3 +109,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
     ```asm
     BR LR
     ```
+    
+    
+Conclusion:    
+     Arm instruction set is far differemt from actual assembly code
