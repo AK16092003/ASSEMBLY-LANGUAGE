@@ -1,4 +1,7 @@
+# AIM
 Just to bring a comparison between C language code , Assembly code , and Arm instructions set   
+
+# COMPARISON
 
 1) Initializing `FACT` function / label:   
 
@@ -110,6 +113,9 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
     BR LR
     ```
     
-    
-Conclusion:    
-     Arm instruction set is far differemt from actual assembly code
+     
+# Conclusion:
+Arm instruction set is far different from actual assembly code
+Readability of code: `C` > `ARM` > `ASM`   
+Number of lines in code : 'C' < 'ARM' < 'ASM'   
+     
