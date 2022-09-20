@@ -30,11 +30,12 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
       
    Assembly Code:   
       
-   call `.L3` label inside fact label
+   call `.L3` label inside `FACT` label
    ```asm
    	movl	$1, %eax
-	   jmp	.L3
+	jmp	.L3
    ```
+   declare `.L3` label inside `FACT` label
    ```asm
    .L3:
          addq	$32, %rsp
