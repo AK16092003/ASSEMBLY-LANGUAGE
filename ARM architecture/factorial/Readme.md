@@ -115,7 +115,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
     
      
 # Conclusion:
-Arm instruction set is far different from actual assembly code
-Readability of code: `C` > `ARM` > `ASM`   
-Number of lines in code : 'C' < 'ARM' < 'ASM'   
+Arm instruction set is far different from actual assembly code   
+Readability of code: `C` > `ARM` > `ASM`     
+Number of lines in code : `C` < `ARM` < `ASM`      
      
