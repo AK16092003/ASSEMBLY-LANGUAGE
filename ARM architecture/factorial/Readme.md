@@ -14,10 +14,42 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
         movq	%rsp, %rbp
         .seh_setframe	%rbp, 0
    ```
-   Arm instructions :
+   Arm Instructions :
    ```asm
    FACT:
         SUBI SP , SP , #16
         STR LR , [SP , #8]
         STR X0 , [SP , #0]
    ```
+2) Declare Base case for recursion    
+    
+   C code:
+   ```c
+   if(n < 1) return 1;
+   ```   
+      
+   Assembly Code:   
+      
+   call .L3 label inside fact label
+   ```asm
+   	movl	$1, %eax
+	   jmp	.L3
+   ```
+   ```asm
+   .L3:
+         addq	$32, %rsp
+         popq	%rbp
+         ret
+   ```
+   
+   ARM Instructions:   
+   
+   ```asm
+      ADDI X1 , XZR , #1
+      ADDI SP , SP , #16
+
+      BR LR
+   ```
+4)
+
+
