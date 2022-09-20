@@ -35,7 +35,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
    	movl	$1, %eax
 	jmp	.L3
    ```
-   declare `.L3` label inside `FACT` label
+   declare `.L3` label outside `FACT` label
    ```asm
    .L3:
          addq	$32, %rsp
