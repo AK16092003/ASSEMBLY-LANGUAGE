@@ -61,7 +61,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
    Assembly Code:   
    ```asm
    
-   .L2:
+   .L2:   
 	movl	16(%rbp), %eax
 	subl	$1, %eax
 	movl	%eax, %ecx
@@ -72,8 +72,8 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
 
    ARM Instructions:
    ```asm
-   	SUBIS XZR , X0 , #1
-	B GE L1
+   SUBIS XZR , X0 , #1
+   B GE L1
    ```
    ```asm
    
