@@ -60,12 +60,14 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
    
    Assembly Code:   
    ```asm
+   
    .L2:
 	movl	16(%rbp), %eax
 	subl	$1, %eax
 	movl	%eax, %ecx
 	call	fact
 	imull	16(%rbp), %eax
+	
    ```
 
    ARM Instructions:
@@ -74,6 +76,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
 	B GE L1
    ```
    ```asm
+   
    L1:
 	SUBI X0 , X0 , #1
 	BL FACT
@@ -84,6 +87,7 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
 	MUL X1 , X0 , X1
 	
 	BR LR
+	
    ```
 4) End of program
     C langugage :
@@ -92,13 +96,16 @@ Just to bring a comparison between C language code , Assembly code , and Arm ins
     ```
     Assembly Language :
     ```asm
+    
     ret
 	.seh_endproc
 	.ident	"GCC: (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+	
     ```
     
     ARM Instructions:
     for return statement
+ 
     ```asm
     BR LR
     ```
